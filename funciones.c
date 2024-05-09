@@ -1,39 +1,21 @@
 #include <stdio.h>
 #include"funciones.h"
 
-int scanMeses (){
-    int meses;
-    printf("Ingrese los meses a programar el ahorro\n");
-    scanf("%i",&meses);
-    while (meses<=0)
+void instr (){
+    printf("--------------- SIMULADOR AHORRO PROGRAMADO --------------- \nPara iniciar el simulador, ingrese los datos en el siguiente orden"); 
+    printf("\n1. Meses a ahorrar \n2. Monto mensual \n3. Intereses\n");
+}
+
+float scan (int a){
+    float num;
+    printf("Ingrese el valor %i : ",a);
+    scanf("%f",&num);
+    while (num<=0)
     {
-        printf("Ingrese un numero valido\n");
-        scanf("%i",&meses);
+        printf("Ingrese una cantidad valida : ");
+        scanf("%f",&num);
     }
-    
-    return meses; 
-}
-
-float scanMonto (){
-    float monto;
-    printf("Ingrese el monto mensual a ahorrar\n");
-    scanf("%f",&monto);
-    while(monto<=0){
-        printf("Ingrese un valor valido\n");
-        scanf("%f",&monto);
-    }
-    return monto;
-}
-
-float scanInt (){
-    float interes;
-    printf("Ingrese el interes anual\n");
-    while(interes<=0){
-        printf("Ingrese un valor valido\n");
-        scanf("%f",&interes);
-    }
-    scanf("%f",&interes);
-    return interes;
+    return num;
 }
 
 float iMensual (float interes){
@@ -48,7 +30,7 @@ void para (int meses, float monto, float iMensual){
     interes=montoM*iMensual;
     for (int i = 0; i < meses; i++)
     {
-        printf("---------------Mes %i---------------\n",i+1);
+        printf("\n---------------Mes %i---------------\n",i+1);
         totalI+=interes;
         montoM=(montoM+interes);
         printf("Monto ahorrado : %f\n",montoM);

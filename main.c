@@ -4,9 +4,10 @@
 int main () {
     int meses;
     float interes, monto, interesesM;
-    meses = scanMeses();
-    monto = scanMonto();
-    interes = scanInt();
+    instr ();
+    meses = scan(1);
+    monto = scan(2);
+    interes = scan(3);
     interesesM =  iMensual (interes)/100;
     para (meses,monto,interesesM);
 
