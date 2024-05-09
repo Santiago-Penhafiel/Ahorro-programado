@@ -43,17 +43,20 @@ float iMensual (float interes){
 }
 
 void para (int meses, float monto, float iMensual){
-    float montoM, interes;
+    float montoM, interes,totalI=0;
     montoM=monto;
     interes=montoM*iMensual;
-    printf("%f \n",interes);
     for (int i = 0; i < meses; i++)
     {
+        printf("---------------Mes %i---------------\n",i+1);
+        totalI+=interes;
         montoM=(montoM+interes);
-        printf("El monto ahorrado en el mes %i es de: %f\n",i+1,montoM);
+        printf("Monto ahorrado : %f\n",montoM);
         montoM+=monto;
+        printf("Ganancias : %f\n",interes);
         interes=montoM*iMensual;
     }
+    printf("\n\nInversion : %f \nAhorro total : %f \nTotal ganancias : %f",meses*monto,montoM-monto,totalI);
 }
 
 

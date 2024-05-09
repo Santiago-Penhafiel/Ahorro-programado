@@ -8,7 +8,6 @@ int main () {
     monto = scanMonto();
     interes = scanInt();
     interesesM =  iMensual (interes)/100;
-    printf("InteresesM = %f", interesesM);
     para (meses,monto,interesesM);
 
     getch();
